@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Ezappt</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+    <script src="MessageBanner.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <script src="Common.js" type="text/javascript"></script>
+    <script src="CancelApptController.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
+
+</head>
+<body class="container" data-ng-app="myApp" data-ng-controller="myCtrl">
+
+    <h3 class="text-center">Cancel Appointments</h3>
+    <br />
+
+   
+    <div class="table-responsive" ng-show="appts.length != 0">
+        <table style="margin-bottom:15px;" id="apptsTable" class="table table-bordered">
+            <tr>
+                <th>Client</th>
+                <th>Start</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="appt in appts" on-finish-render="ngRepeatFinished">
+                <td>{{appt.Subject}}</td>
+                <td>{{appt.Start.DateTime}}</td>
+                <td><button ng-click="cancelAppt($index)" class="btn" style="color:red">Cancel</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- FabricUI component used for displaying notifications -->
+    <div class="ms-MessageBanner" style="position:absolute;bottom: 0;left:0;right:0;">
+        <div class="ms-MessageBanner-content">
+            <div class="ms-MessageBanner-text">
+                <div class="ms-MessageBanner-clipper">
+                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notificationHeader"></div>
+                    <div class="ms-font-m ms-fontWeight-semilight" id="notificationBody"></div>
+                </div>
+            </div>
+            <button class="ms-MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
+            <div class="ms-MessageBanner-action"></div>
+        </div>
+        <button class="ms-MessageBanner-close"> <i class="ms-Icon ms-Icon--x"></i> </button>
+    </div>
+
+</body>
+</html>

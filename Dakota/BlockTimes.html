@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Ezappt</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+    <script src="MessageBanner.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="Home.css?ezapptVersion=0" rel="stylesheet" type="text/css" />
+    <script src="Common.js?ezapptVersion=0" type="text/javascript"></script>
+    <script src="BlockTimesController.js?ezapptVersion=0" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
+
+</head>
+<body class="container" data-ng-app="myApp" data-ng-controller="myCtrl">
+
+    <br />
+    <h1 class="text-center">Block Times</h1>
+    <br />
+    <br />
+    <div class="input-group" id="startDate">
+        <input placeholder="Date" type="text" class="form-control" id="datepicker1" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+
+    </div>
+    <br />
+
+    <br />
+    <div>
+        <label style="display:block;">Start time - End time</label>
+        <p class="col-xs-6 col-md-6 col-lg-6">
+            <select ng-model="avTime.startTime" class="form-control">
+                <option>00:00</option>
+                <option>00:30</option>
+                <option>01:00</option>
+                <option>01:30</option>
+                <option>02:00</option>
+                <option>02:30</option>
+                <option>03:00</option>
+                <option>03:30</option>
+                <option>04:30</option>
+                <option>05:00</option>
+                <option>05:30</option>
+                <option>06:00</option>
+                <option>06:30</option>
+                <option>07:00</option>
+                <option>07:30</option>
+                <option>08:00</option>
+                <option>08:30</option>
+                <option>09:00</option>
+                <option>09:30</option>
+                <option>10:00</option>
+                <option>10:30</option>
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+                <option>14:30</option>
+                <option>15:00</option>
+                <option>15:30</option>
+                <option>16:00</option>
+                <option>16:30</option>
+                <option>17:00</option>
+                <option>17:30</option>
+                <option>18:00</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+                <option>21:30</option>
+                <option>22:00</option>
+                <option>22:30</option>
+                <option>23:00</option>
+                <option>23:30</option>
+            </select>
+        </p>
+        <p class="col-xs-6 col-md-6 col-lg-6">
+            <select ng-model="avTime.endTime" class="form-control">
+                <option>00:00</option>
+                <option>00:30</option>
+                <option>01:00</option>
+                <option>01:30</option>
+                <option>02:00</option>
+                <option>02:30</option>
+                <option>03:00</option>
+                <option>03:30</option>
+                <option>04:30</option>
+                <option>05:00</option>
+                <option>05:30</option>
+                <option>06:00</option>
+                <option>06:30</option>
+                <option>07:00</option>
+                <option>07:30</option>
+                <option>08:00</option>
+                <option>08:30</option>
+                <option>09:00</option>
+                <option>09:30</option>
+                <option>10:00</option>
+                <option>10:30</option>
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+                <option>14:30</option>
+                <option>15:00</option>
+                <option>15:30</option>
+                <option>16:00</option>
+                <option>16:30</option>
+                <option>17:00</option>
+                <option>17:30</option>
+                <option>18:00</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+                <option>21:30</option>
+                <option>22:00</option>
+                <option>22:30</option>
+                <option>23:00</option>
+                <option>23:30</option>
+            </select>
+        </p>
+    </div>
+    <br />
+    <div>
+        <label for="location">Location </label><br />
+        <select ng-model="avTime.location" class="form-control" id="locations">
+            <option id="{{location.locationId}}" ng-repeat="location in locations">{{location.locationName}}</option>
+        </select>
+    </div>
+    <br />
+   
+    <div class="text-right">
+       <button id="btnSave" class="btn btn-primary" ng-disabled=" avTime.location =='' || avTime.startDt =='' || avTime.endDt =='' || avTime.endTime =='' || avTime.startTime ==''"">Save</button>
+    </div>
+    <!-- FabricUI component used for displaying notifications -->
+    <div class="ms-MessageBanner" style="position:absolute;bottom: 0;left:0;right:0;">
+        <div class="ms-MessageBanner-content">
+            <div class="ms-MessageBanner-text">
+                <div class="ms-MessageBanner-clipper">
+                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notificationHeader"></div>
+                    <div class="ms-font-m ms-fontWeight-semilight" id="notificationBody"></div>
+                </div>
+            </div>
+            <button class="ms-MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
+            <div class="ms-MessageBanner-action"></div>
+        </div>
+        <button class="ms-MessageBanner-close"> <i class="ms-Icon ms-Icon--x"></i> </button>
+    </div>
+
+</body>
+</html>

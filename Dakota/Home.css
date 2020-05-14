@@ -1,0 +1,16 @@
+﻿/*Page-specific styling */
+
+.padding {
+    padding: 15px;
+}
+
+#mainCon{
+    font-size:22px;
+}
+#newAcc, #newAcc:hover {
+    color: #333;
+    text-decoration: underline;
+}
+    #newAcc:hover{
+        cursor:pointer;
+    }
