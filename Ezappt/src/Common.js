@@ -31,6 +31,7 @@ function hideErrorMessage() {
 // Helper function for treating errors
 function errorHandler(error) {
     showNotification("Error", error.responseText);
+    RecordError(46,JSON.stringify(error),'');
 }
 // Helper function for displaying notifications
 function showNotification(header, content) {
@@ -61,6 +62,23 @@ function Redirect(q) {
 }
 function getQueryStringValue(key) {
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
+function RecordError(userID,ErrorDetail,StepDetail){
+    $.ajax({
+        url: restUrl + 'BaseURI',
+        method: "POST",
+        data: JSON.stringify({
+            userId: userID,
+            errorDetail:ErrorDetail,
+            stepDetail :StepDetail
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).done(function () {
+        console.log("error recorded");
+
+    });
 }
 Storage.prototype.setObj = function (key, obj) {
     return this.setItem(key, JSON.stringify(obj))
