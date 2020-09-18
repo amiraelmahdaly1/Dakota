@@ -16,10 +16,10 @@ app.directive('onFinishRender', function ($timeout) {
     }
 });
 //var DeploymentHost = "https://amiraelmahdaly1.github.io/Ezappt/";
-var DeploymentHost = "http://uwo-addin.ezsoftco.com/";
+var DeploymentHost = "https://uwo-addin.ezsoftco.com/";
 //var DeploymentHost = "https://localhost:3000/";
 var messageBanner;
-var BaseURI = "http://uwo-wcf.ezsoftco.com/";
+var BaseURI = "https://uwo-wcf.ezsoftco.com/";
 // Error Handling Region
 
 function hideErrorMessage() {

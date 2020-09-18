@@ -15,7 +15,7 @@
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
   <DisplayName DefaultValue="EZappt" />
   <Description DefaultValue="EZappt" />
-  <IconUrl DefaultValue="http://uwo-addin.ezsoftco.com/Images/icon64.png" />
+  <IconUrl DefaultValue="https://uwo-addin.ezsoftco.com/Images/icon64.png" />
 
   <SupportUrl DefaultValue="http://www.contoso.com" />
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
@@ -37,7 +37,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="http://uwo-addin.ezsoftco.com/Index.html" />
+        <SourceLocation DefaultValue="https://uwo-addin.ezsoftco.com/Index.html" />
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -97,13 +97,13 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="http://uwo-addin.ezsoftco.com/Images/icon16.png" />
-        <bt:Image id="icon32" DefaultValue="http://uwo-addin.ezsoftco.com/Images/icon32.png" />
-        <bt:Image id="icon80" DefaultValue="http://uwo-addin.ezsoftco.com/Images/icon80.png" />
+        <bt:Image id="icon16" DefaultValue="https://uwo-addin.ezsoftco.com/Images/icon16.png" />
+        <bt:Image id="icon32" DefaultValue="https://uwo-addin.ezsoftco.com/Images/icon32.png" />
+        <bt:Image id="icon80" DefaultValue="https://uwo-addin.ezsoftco.com/Images/icon80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="http://uwo-addin.ezsoftco.com/Functions/FunctionFile.html" />
-        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="http://uwo-addin.ezsoftco.com/Index.html" />
+        <bt:Url id="functionFile" DefaultValue="https://uwo-addin.ezsoftco.com/Functions/FunctionFile.html" />
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://uwo-addin.ezsoftco.com/Index.html" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="EZappt" />
