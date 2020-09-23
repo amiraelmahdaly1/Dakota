@@ -137,6 +137,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
     }
     function checkForEzappt() {
         if (sessionStorage.getItem('calendarID')) {
+            CalendarID = sessionStorage.getItem('calendarID');
             $scope.newlyCreated = false;
             if ($scope.key === 'avTimes' || $scope.key === 'blockTimes') {
                 for (i = 0; i < $scope.avTimes.length; i++) {
@@ -152,7 +153,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
                 //appt after creating ezappt cal
                 var k = 0;
                 //new Date(new Date(dt).setMinutes(dt.getMinutes() + 30)).toISOString()
-                getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes() + 30)).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
+                getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes())).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
 
             }
         }
@@ -185,7 +186,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
                         //appt after creating ezappt cal
                         var k = 0;
                         //new Date(new Date(dt).setMinutes(dt.getMinutes() + 30)).toISOString()
-                        getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes() + 30)).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
+                        getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes())).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
 
                     }
                 }
@@ -340,7 +341,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
                         arrSyncIds.push($scope.allSyncAppts[k].appointmentid);
                         k++;
                         if (k < $scope.allSyncAppts.length)
-                            getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes() + 30)).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
+                            getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes())).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
                         else
                             AngularServices.POST("RemoveApptSyncItemsFromDb", { "apptIdsJson": JSON.stringify(arrSyncIds) }).then(function (data) {
 
@@ -390,7 +391,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
                             arrSyncIds.push($scope.allSyncAppts[k].appointmentid);
                             k++;
                             if (k < $scope.allSyncAppts.length)
-                                getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes() + 30)).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
+                                getAndDeleteEvents(new Date(new Date(new Date($scope.allSyncAppts[k].dtStart)).setMinutes(new Date($scope.allSyncAppts[k].dtStart).getMinutes())).toISOString(), new Date($scope.allSyncAppts[k].dtEnd).toISOString(), k);
                             else
                                 AngularServices.POST("RemoveApptSyncItemsFromDb", { "apptIdsJson": JSON.stringify(arrSyncIds) }).then(function (data) {
 

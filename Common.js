@@ -19,7 +19,7 @@ app.directive('onFinishRender', function ($timeout) {
 var DeploymentHost = "https://uwo-addin.ezsoftco.com/";
 //var DeploymentHost = "https://localhost:3000/";
 var messageBanner;
-var BaseURI = "https://uwo-wcf.ezsoftco.com/";
+var BaseURI = "https://uwo-wcf.ezsoftco.com/WCFEzapptJsonService.svc/";
 // Error Handling Region
 
 function hideErrorMessage() {
@@ -65,7 +65,7 @@ function getQueryStringValue(key) {
 }
 function RecordError(userID,ErrorDetail,StepDetail){
     $.ajax({
-        url: restUrl + 'BaseURI',
+        url: BaseURI + 'InsertErrorLog',
         method: "POST",
         data: JSON.stringify({
             userId: userID,

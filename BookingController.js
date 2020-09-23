@@ -94,6 +94,7 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
                         $("#date").css("display", "none");
                         showNotification("Notification", "Booked Successfully");
                         $scope.notes = "";
+                        window.location.replace("DailySchedule.html?userName="+$scope.userName+"&staffID="+$scope.staffID+"&userID="+$scope.userID)
                     });
 
             });
